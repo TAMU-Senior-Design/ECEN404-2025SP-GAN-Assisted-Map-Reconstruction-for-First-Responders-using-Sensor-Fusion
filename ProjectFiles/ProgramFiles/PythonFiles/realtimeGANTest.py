@@ -185,7 +185,7 @@ async def stream_to_unity(websocket):
 
 async def main():
     print(f"Starting WebSocket server on ws://localhost:{WEBSOCKET_PORT}")
-    server = await websockets.serve(stream_to_unity, "0.0.0.0", WEBSOCKET_PORT)
+    server = await websockets.serve(stream_to_unity, "localhost", WEBSOCKET_PORT)
     print("WebSocket server started. Waiting for Unity to connect...")
     await server.wait_closed()
 
